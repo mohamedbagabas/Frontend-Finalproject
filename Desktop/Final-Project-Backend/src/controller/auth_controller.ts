@@ -34,21 +34,24 @@ export const loginHandler = async (req: Request, res: Response) => {
   );
 
   return res.status(200).json({
-    message: 'Welcome back ' + user.username + ' !',
+    message: 'Welcome back ' + user.name + ' !',
     token,
   });
 };
 
 export const registerHandler = async (req: Request, res: Response) => {
   try {
-    const { username, password, email } = req.body as User;
+    const { name, gender, username, password, email, phone } = req.body as User;
     const hashedPassword = await argon2.hash(password);
 
     await prisma.user.create({
       data: {
+        name,
+        gender,
         username,
         password: hashedPassword,
         email,
+        phone
       },
     });
 

@@ -53,6 +53,7 @@ model Contract {
   landloard       Landlord @relation(fields: [user_id], references: [id])
   tenant_id       String
   tenant          Tenant   @relation(fields: [tenant_id], references: [id])
+  contract_end    String
 }
 
 enum Role {
