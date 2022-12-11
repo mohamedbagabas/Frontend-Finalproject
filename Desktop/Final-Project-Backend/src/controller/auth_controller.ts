@@ -50,8 +50,8 @@ export const registerHandler = async (req: Request, res: Response) => {
         gender,
         username,
         password: hashedPassword,
-        email,
-        phone
+        phone,
+        email
       },
     });
 
