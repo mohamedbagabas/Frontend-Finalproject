@@ -25,7 +25,7 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
         return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
+          <Tag size={'md'} variant="solid" colorScheme="green" key={tag}>
             {tag}
           </Tag>
         );
@@ -42,12 +42,7 @@ interface BlogAuthorProps {
 export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
-      <Image
-        borderRadius="full"
-        boxSize="40px"
-        src="https://100k-faces.glitch.me/random-image"
-        alt={`Avatar of ${props.name}`}
-      />
+
       <Text fontWeight="medium">{props.name}</Text>
       <Text>—</Text>
       <Text>{props.date.toLocaleDateString()}</Text>
@@ -59,6 +54,7 @@ const ArticleList = () => {
   return (
     <Container  maxW={'7xl'} p="12">
       <Box
+      
         marginTop={{ base: '1', sm: '5' }}
         display="flex"
         flexDirection={{ base: 'column', sm: 'row' }}
@@ -78,7 +74,7 @@ const ArticleList = () => {
               <Image
                 borderRadius="lg"
                 src="/Property.gif" alt="hero-image"
-                objectFit="contain"
+                objectFit="contain" shadow="dark-lg"
               />
             </Link>
           </Box>
@@ -102,19 +98,19 @@ const ArticleList = () => {
           marginTop={{ base: '3', sm: '0' }}>
           <BlogTags tags={['Real estate', 'Product']} />
           <Heading marginTop="1">
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+            <Link textDecoration="none" color='tomato'>
             Property Management 
             </Link>
           </Heading>
           <Text
             as="p"
             marginTop="2"
-            color={useColorModeValue('gray.700', 'gray.200')}
+            color='black'
             fontSize="lg">
             With over 555,000 residential units, more than 275,000 hotel keys, in excess of 4.3 million sqm of retail space and over 6.1 million sqm of new office space expected by 2030, as part of the vision 2030 project. 
 The planned construction in the Kingdom will make Saudi Arabia the largest construction site the world has ever known.
-          </Text>
-          <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+          </Text >
+
         </Box>
       </Box>
       <Heading  as="h1" marginTop="2">
