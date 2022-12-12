@@ -19,8 +19,11 @@ function App() {
   const { brand, links } = navigation;
   return (
     <>
+   
     <NavbarScroller brand={brand} links={links} />
+    
       <BrowserRouter>
+      <LoginFrom/>
        <Routes>
         <Route path="/Login" element={<LoginFrom/>}/>
         <Route path="/Register" element={<Register/>}/>
