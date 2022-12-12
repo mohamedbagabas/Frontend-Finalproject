@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const navigation = {
   brand: { name: 'Rentar', to: '/' },
   links: [
-    { name: 'Login', to: '/login' },
+    { name: 'Login', to: '/' },
     { name: 'Building', to: '/Buidling' },
     { name: 'Tenant', to: '/tenant' }
   ]
@@ -23,12 +23,11 @@ function App() {
     <NavbarScroller brand={brand} links={links} />
     
       <BrowserRouter>
-      <LoginFrom/>
        <Routes>
-        <Route path="/Login" element={<LoginFrom/>}/>
+        <Route path="/" element={<LoginFrom/>}/>
         <Route path="/Register" element={<Register/>}/>
         
-        {/* <Route element={<ProtectedRoute />}/> */}
+        {/* <Route el ement={<ProtectedRoute />}/> */}
           
        </Routes>
       </BrowserRouter>
