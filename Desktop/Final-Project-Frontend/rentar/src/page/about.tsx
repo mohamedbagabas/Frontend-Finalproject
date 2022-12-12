@@ -112,20 +112,12 @@ const About = () => {
 
         </Box>
       </Box>
-      <Heading  as="h1" marginTop="2">
 
 
-      .
-      </Heading>
-      <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
           <Box w="100%">
-            <Box borderRadius="lg" overflow="hidden">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
-
-              </Link>
-            </Box>
+ 
 
          
            

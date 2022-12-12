@@ -52,7 +52,7 @@ export default function Simple() {
   borderRadius='md'
   bgGradient='linear(to-r, teal.500, green.500)'
 >
-Rentar
+      Rentar     
 </Box>
             <HStack
               as={'nav'}

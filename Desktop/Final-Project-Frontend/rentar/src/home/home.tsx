@@ -105,7 +105,7 @@ const ArticleList = () => {
           <Text
             as="p"
             marginTop="2"
-            color='black'
+            color="gray.100"
             fontSize="lg">
             With over 555,000 residential units, more than 275,000 hotel keys, in excess of 4.3 million sqm of retail space and over 6.1 million sqm of new office space expected by 2030, as part of the vision 2030 project. 
 The planned construction in the Kingdom will make Saudi Arabia the largest construction site the world has ever known.
@@ -113,24 +113,11 @@ The planned construction in the Kingdom will make Saudi Arabia the largest const
 
         </Box>
       </Box>
-      <Heading  as="h1" marginTop="2">
+   
 
-
-      .
-      </Heading>
-      <Divider marginTop="5" />
       <Wrap spacing="30px" marginTop="5">
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
-            <Box borderRadius="lg" overflow="hidden">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
 
-              </Link>
-            </Box>
-
-         
-           
-          </Box>
         </WrapItem>
       </Wrap>
 
