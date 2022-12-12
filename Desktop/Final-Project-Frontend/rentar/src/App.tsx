@@ -1,10 +1,11 @@
 import * as React from "react";
 import Footer from "./Footer/Footer";
 import LoginFrom from "./Login/LoginPage";
-import NavbarScroller from "./Navbar/Nav";
+import  Simple from "./Navbar/Nav";
 import Register from "./Register/Register";
 import ProtectedRoute from "./Login/ProtectedRouter";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './home/home'
 
 
 const navigation = {
@@ -20,11 +21,12 @@ function App() {
   return (
     <>
    
-    <NavbarScroller brand={brand} links={links} />
+    < Simple />
     
       <BrowserRouter>
-      <LoginFrom/>
+       {/* <LoginFrom/> */}
        <Routes>
+       <Route path="/" element={<Home/>}/>
         <Route path="/Login" element={<LoginFrom/>}/>
         <Route path="/Register" element={<Register/>}/>
         
