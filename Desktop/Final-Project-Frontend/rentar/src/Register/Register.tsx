@@ -1,5 +1,6 @@
 import React, { useState, useReducer } from 'react';
 import './Register.css';
+import { Navigate, useNavigate } from "react-router-dom";
 
 const initialState = {
   name: '',
@@ -8,6 +9,7 @@ const initialState = {
   passwordRepeat: '',
   termsAccepted: false
 };
+
 
 function reducer(state:any, action:any) {
   if (action.name === 'termsAccepted') {
@@ -24,6 +26,7 @@ function validate(state:any) {
 }
 
 const Register = () => {
+    const navigate = useNavigate();
   const [state, dispatch] = useReducer(reducer, initialState);
 
   console.log(state);
@@ -34,6 +37,7 @@ const Register = () => {
   }
 
   function onChange(e:any) {
+   
     const { name, value, checked } = e.target;
     const action = { name, value, checked };
     dispatch(action);
@@ -110,14 +114,19 @@ const Register = () => {
             name="termsAccepted"
             onChange={onChange}
           />
-          Accept Our Terms 
+          Please Accept Our Terms 
         </label>
 
         
 
-        <button
+        <button 
+          
           className={!validate(state) ? 'disabled' : ''}
-          onClick={handleClick}
+          onClick={(e)=>{
+            handleClick(e)
+            navigate('/Login')
+
+          }}
           disabled={!validate(state)}
         >
           Register
