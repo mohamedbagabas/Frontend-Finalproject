@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from 'react';
 import './Register.css';
 import { Navigate, useNavigate } from "react-router-dom";
+import { useToast } from '@chakra-ui/react';
 
 const initialState = {
   name: '',
@@ -27,6 +28,66 @@ function validate(state:any) {
 
 const Register = () => {
     const navigate = useNavigate();
+    const [name, setName] = useState('');
+    const [id, setId] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [gender, setGender] = useState('');
+    const [password, setPassword] = useState('');
+    const [password2, setPassword2] = useState('');
+
+    const toast = useToast();
+    
+    const submitRegister = async () => {
+        try {
+          if (password !== password2) {
+            toast({
+              title: `You passwords doesn't match`,
+              status: 'error',
+              duration: 3000,
+              position: 'top',
+            });
+            return;
+          }
+    
+          const request = await fetch('/api/v1/auth/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username, password, email }),
+          });
+    
+          const data = await request.json();
+    
+          if (request.status !== 201) {
+            toast({
+              title: data.message,
+              status: 'error',
+              duration: 3000,
+              position: 'top',
+            });
+            return;
+          }
+    
+          toast({
+            title: data.message,
+            status: 'success',
+            duration: 3000,
+            position: 'top',
+          });
+          navigate('/login');
+        } catch (error) {
+          toast({
+            title: 'Server Error !',
+            status: 'error',
+            duration: 3000,
+            position: 'top',
+          });
+        }
+    };
+    
   const [state, dispatch] = useReducer(reducer, initialState);
 
   console.log(state);
@@ -52,21 +113,24 @@ const Register = () => {
           type="text"
           name="name"
           placeholder="Name"
-          onChange={onChange}
+          onChange={(e)=>{setName(e.target.value)}}
+          value={name}
         />
          <input
           className="textInput"
           type="text"
           name="ID"
           placeholder="ID"
-          onChange={onChange}
+          onChange={(e)=>{setId(e.target.value)}}
+          value={id}
         />
          <input
           className="textInput"
           type="text"
           name="username"
           placeholder="Username"
-          onChange={onChange}
+          onChange={(e)=>{setUsername(e.target.value)}}
+          value={username}
         />
 
         <input
@@ -74,21 +138,24 @@ const Register = () => {
           type="text"
           name="email"
           placeholder="Email"
-          onChange={onChange}
+          onChange={(e)=>{setEmail(e.target.value)}}
+          value={email}
         />
          <input
           className="textInput"
           type="number"
           name="Phone"
           placeholder="Phone"
-          onChange={onChange}
+          onChange={(e)=>{setPhone(e.target.value)}}
+          value={phone}
         />
          <input
           className="textInput"
           type="text"
           name="Gender"
           placeholder="Gender"
-          onChange={onChange}
+          onChange={(e)=>{setGender(e.target.value)}}
+          value={gender}
         />
 
         <input
@@ -96,7 +163,8 @@ const Register = () => {
           type="password"
           name="password"
           placeholder="Password"
-          onChange={onChange}
+          onChange={(e)=>{setPassword(e.target.value)}}
+          value={password}
         />
 
         <input
@@ -104,7 +172,8 @@ const Register = () => {
           type="password"
           name="passwordRepeat"
           placeholder="Password repeat"
-          onChange={onChange}
+          onChange={(e)=>{setPassword2(e.target.value)}}
+          value={password2}
         />
 
         <label className="touCheckboxLabel">
@@ -123,9 +192,8 @@ const Register = () => {
           
           className={!validate(state) ? 'disabled' : ''}
           onClick={(e)=>{
-            handleClick(e)
+            submitRegister()
             navigate('/Login')
-
           }}
           disabled={!validate(state)}
         >

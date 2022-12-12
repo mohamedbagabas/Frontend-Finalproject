@@ -5,13 +5,14 @@ import NavbarScroller from "./Navbar/Nav";
 import Register from "./Register/Register";
 import ProtectedRoute from "./Login/ProtectedRouter";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Buildinginfo from "./Building/Building";
 
 
 const navigation = {
   brand: { name: 'Rentar', to: '/' },
   links: [
     { name: 'Login', to: '/' },
-    { name: 'Building', to: '/Buidling' },
+    { name: 'Building', to: '/Building' },
     { name: 'Tenant', to: '/tenant' }
   ]
 };
@@ -26,6 +27,7 @@ function App() {
        <Routes>
         <Route path="/" element={<LoginFrom/>}/>
         <Route path="/Register" element={<Register/>}/>
+        <Route path="/Building" element={<Buildinginfo/>}/>
         
         {/* <Route el ement={<ProtectedRoute />}/> */}
           
