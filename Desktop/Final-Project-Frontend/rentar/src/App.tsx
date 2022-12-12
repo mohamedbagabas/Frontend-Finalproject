@@ -6,13 +6,14 @@ import Register from "./Register/Register";
 import ProtectedRoute from "./Login/ProtectedRouter";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './home/home'
+import Buildinginfo from "./Building/Building";
 
 
 const navigation = {
   brand: { name: 'Rentar', to: '/' },
   links: [
-    { name: 'Login', to: '/login' },
-    { name: 'Building', to: '/Buidling' },
+    { name: 'Login', to: '/' },
+    { name: 'Building', to: '/Building' },
     { name: 'Tenant', to: '/tenant' }
   ]
 };
@@ -24,13 +25,12 @@ function App() {
     < Simple />
     
       <BrowserRouter>
-       {/* <LoginFrom/> */}
        <Routes>
-       <Route path="/" element={<Home/>}/>
-        <Route path="/Login" element={<LoginFrom/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/Register" element={<Register/>}/>
+        <Route path="/Building" element={<Buildinginfo/>}/>
         
-        {/* <Route element={<ProtectedRoute />}/> */}
+        {/* <Route el ement={<ProtectedRoute />}/> */}
           
        </Routes>
       </BrowserRouter>
