@@ -8,7 +8,7 @@ import {
     useColorModeValue,
     VisuallyHidden,
   } from '@chakra-ui/react';
-  import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
+  // import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { ReactNode } from 'react';
   
   const Logo = (props: any) => {
@@ -80,7 +80,7 @@ import {
             <Link href={"/"}>Home</Link>
             <Link href={"../page"}>About Us</Link>
             <Link href={'#'}>Contact Us</Link>
-            <Link href={'#'}>Rules</Link>
+            <Link href={"../rules"}>Rules</Link>
           </Stack>
         </Container>
   

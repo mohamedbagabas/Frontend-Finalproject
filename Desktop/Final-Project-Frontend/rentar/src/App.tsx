@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './home/home'
 import Buildinginfo from "./Building/Building";
 import About from './page/about'
+import Rules from './rules/rules'
 
 
 const navigation = {
@@ -31,7 +32,7 @@ function App() {
         <Route path="/Register" element={<Register/>}/>
         <Route path="/Building" element={<Buildinginfo/>}/>
         <Route path="/page" element={<About/>}/>
-
+        <Route path="/rules" element={<Rules/>}/>
         {/* <Route el ement={<ProtectedRoute />}/> */}
           
        </Routes>
