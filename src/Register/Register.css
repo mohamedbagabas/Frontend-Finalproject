@@ -1,0 +1,113 @@
+input:focus,
+button:focus {
+  outline: none;
+}
+.wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 32%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px 0px rgba(50, 50, 44);
+    width: 300px;
+    background-color: #19811E;
+    padding: 80px;
+  }
+  
+  .registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+  }
+  
+  .textInput {
+    padding-left: 10px;
+    height: 50px;
+    margin-bottom: 30px;
+    align-self: stretch;
+    font-family: Arial, sans-serif;
+    color: white;
+  
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+  
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: rgba(255, 255, 255, 0.7);
+    background-color: transparent;
+  }
+  
+  .registerForm button {
+    background-color: #db5461; /* Green */
+    border: none;
+    color: white;
+    height: 60px;
+    padding: 15px 32px;
+    width: 100%;
+    border-radius: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    margin-top: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+  }
+  
+  .textInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-family: Arial, sans-serif;
+  }
+  
+  .registerForm button:active {
+    transform: scale(0.9);
+    transition-duration: 100ms;
+  }
+  
+  .registerTitle {
+    font-family: Arial, sans-serif;
+    color: white;
+    align-self: center;
+  }
+  
+  .touCheckboxLabel {
+    font-family: Arial, sans-serif;
+    vertical-align: bottom;
+    color: white;
+    font-weight: 600;
+    margin-left: 20px;
+  }
+  
+  .touCheckbox {
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    margin-left: -20px;
+    margin-bottom: 12px;
+    background-color: #59a96a;
+  }
+  
+  .disabled {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  .disabled:active {
+    transform: none !important;
+  }
+  
+  .invisible {
+    display: none;
+  }
+  
+  .errorMessage {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    padding: 0px 40px;
+    color: red;
+    font-weight: 200;
+    text-align: center;
+  }
