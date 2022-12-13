@@ -78,8 +78,9 @@ import {
           <Stack direction={'row'} spacing={40} 
             >
             <Link href={"/"}>Home</Link>
+            <Link href={"../rules"}>Login</Link>
             <Link href={"../page"}>About Us</Link>
-            <Link href={'#'}>Contact Us</Link>
+            <Link href={'/page/contact'}>Contact Us</Link>
             <Link href={"../rules"}>Rules</Link>
           </Stack>
         </Container>
